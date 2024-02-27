@@ -4,9 +4,12 @@ import Home from './components/Home/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import { auth } from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, login, selectUser } from './features/counter/userSlice';
 
 function App() {
-  const user = null;
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // if the user is logged in, we'll set the user to the user that we get from the auth object.
@@ -15,8 +18,14 @@ function App() {
         if(userAuth) {
           //user is logged in
           console.log(userAuth);
+          //we'll dispatch the login action and pass the user's uid and email to the payload. Dispatch is a function that we can use to dispatch actions to the redux store.
+          dispatch( login({
+            uid: userAuth.uid,
+            email: userAuth.email,
+          }));
         } else {
           //user is logged out
+          dispatch(logout);
         }
       });
       return unsubscribe;
