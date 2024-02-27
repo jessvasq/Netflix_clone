@@ -1,6 +1,7 @@
 import React from 'react'; 
 import './Home.css'; 
 import Nav from '../NavBar/Nav';
+import Banner from '../Banner/Banner';
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
       <Nav />
 
       {/* Banner */}
+      <Banner />
 
       {/* Lists */}
 
