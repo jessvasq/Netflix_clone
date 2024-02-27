@@ -1,6 +1,7 @@
 import React from 'react'; 
 import './Login.css';
 import { useState } from 'react';
+import Register from '../Register/Register';
 
 function Login() {
 
@@ -18,9 +19,9 @@ function Login() {
 
         <div className='login-body'>
 
-            {/* {signIn ? (
-                <SignInScreen />
-            ) : ( */}
+            {signIn ? (
+                <Register />
+            ) : ( 
                 <>
                     <h1>Unlimited movies, TV Shows and more.</h1>
                     <h2>Watch anywhere. Cancel at any time</h2>
@@ -33,7 +34,7 @@ function Login() {
                         </form> 
                     </div>
                 </>
-            {/* )} */}
+            )} 
         </div>
     </div>
   )
