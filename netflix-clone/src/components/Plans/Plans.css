@@ -1,0 +1,31 @@
+.plans {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+.plans:hover {
+    opacity: 1;
+}
+
+.plans > button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: red;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.plans > button {
+    background-color: grey !important;
+}
+/* 
+.plan-options {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 0.8;
+} */
